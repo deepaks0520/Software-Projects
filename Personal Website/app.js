@@ -18,15 +18,15 @@
     var projs = [
         {
             name: 'Personal Website',
-            date: '3/3/18',
+            date: 'May - August 2018',
             description: 'I designed a personal website to show my portfolio of skills and projects',
-            mainSkills: 'Angular.js, Boostrap, html, css, javaScript.'
+            mainSkills: 'Angular.js, Boostrap, html, css, javaScript'
         },
         {
-            name: 'Personal Website',
-            date: '3/3/18',
-            description: 'I designed a personal website to show my portfolio of skills and projects',
-            mainSkills: 'Angular.js, Boostrap, html, css, javaScript.'
+            name: 'Integrated Calendar',
+            date: 'May - August 2018',
+            description: "I designed a website that integrates one's Gmail calendar with one Facebook and Linkedln Events. This enables them to find events that fit their schedule and allows them to their calendar.",
+            mainSkills: 'Angular.js, Boostrap, html, css, javaScript, Gmail APIs, Facebook APIs, Linkedln APIs'
         }
     ];
 })();
