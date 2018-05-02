@@ -7,12 +7,45 @@
         <title>Deepak Subramanian</title>          
     </head>
 
-    <body class="container" ng-controller="TabController as Tab"> </body>
-        <div class="jumbotron p-6 mb-2 bg-secondary text-white">
-                <h1 class="text-center">Deepak Subramanian</h1>
+    <body class="container-fluid" ng-controller="TabController as Tab"> </body>
+        <link rel="stylesheet" href="personal.css"/>  
+        
+        <div class="topHeader bg-dark text-right">
+            <br>
+            Linkedln
+            <br>
         </div>
-        <link rel="stylesheet" href="personal.css"/>                                                
-        <div class="p-3 mb-2 bg-dark text-white container ">
+        
+        <div class="Tab2 bg-dark container-fluid" ng-show="Tab.isSelected(1)">
+            <div class="jumbotronHome text-center">   
+                <br><br>                    
+                <h1>Deepak Subramanian</h1>
+                <p> University of Michigan 2020</p>
+                <p>BE in Computer Engineering</p>
+                <p>Minor in Entrepreneurship </p>
+                <br><br>
+            </div>
+        </div>
+        
+        <div class="Tab bg-primary" ng-show="Tab.isSelected(2)">
+            <div class="jumbotronProjects text-center">                        
+                <br><br><br><br><br><br><br><br><br><br><br><br>              
+            </div>
+        </div>
+
+        <div class="Tab bg-primary" ng-show="Tab.isSelected(3)">
+            <div class="jumbotronResume text-center">                        
+                <br><br><br><br><br><br><br><br><br><br><br><br>              
+            </div>
+        </div>
+
+        <div class="Tab bg-primary" ng-show="Tab.isSelected(4)">
+            <div class="jumbotronContact text-center">                        
+                 <br><br><br><br><br><br><br><br><br><br><br><br>                  
+            </div>
+        </div>
+
+        <div class="navMain p-3 bg-dark container-fluid">
             <ul class="nav nav-pills nav-justified">
                 <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
                 <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">Projects</a> 
@@ -21,26 +54,48 @@
             </ul>
         </div>
 
-        <div class="Tab" ng-show="Tab.isSelected(1)">
-            <h2 class="text-center">Home</h2>
-            
-        </div>
-        <div class="card" ng-show="Tab.isSelected(2)" ng-controller="ProjectController as Project">
-            <h2 class="text-center">Projects</h2>                
-            <div class="card-block card-outline-secondary" ng-repeat="project in Project.projects">
-                <span6>
-                <!<img class="card-img-top" style="width: 50%" src="Images/temp.jpeg">
-                <p class="card-text"><b>Project Title: </b>{{project.name}}</p>
+        <div class="cardProjects " ng-show="Tab.isSelected(2)" ng-controller="ProjectController as Project">
+            <div class="card w-100 bg-dark text-white" ng-repeat="project in Project.projects">
+                <br>
+                <h5 class="card-title" style="text-align: center"> <b>{{project.name}}</b></h5>
                 <p class="card-text"><b>Project Date: </b>{{project.date}}</p>
                 <p class="card-text"><b>Project Description: </b>{{project.description}}</p>
-                <p class="card-text"><b>Main Skills Learnt: </b>{{project.mainSkills}}</p>         
+                <p class="card-text"><b>Main Skills Learnt: </b>{{project.mainSkills}}</p> 
+                <br />              
             </div>
         </div>
-        <div class="Tab" ng-show="Tab.isSelected(3)">
-            <h2 class="text-center">Resume</h2>
+        <div class="TabResume bg-dark text-white" ng-show="Tab.isSelected(3)">
+            <br>
+            <div class="row">
+                <div class="col" ng-controller="ExperienceController as Experience">
+                    <h5 class="text-center">Work Experience</h5>
+                    <div class="row text-left" ng-repeat= "jobs in Experience.ex">
+                        <p>
+                            <b>{{jobs.name}}</b> </br>
+                            {{jobs.dates}} </br>
+                            {{jobs.position}} </br>
+                            <li>{{jobs.task1}}</li>
+                            <li>{{jobs.task2}}</li>
+                            <li>{{jobs.task3}}</li>
+                            <li>{{jobs.task4}}</li>                          
+                        </p>
+                    </div>
+                </div>
+                <div class="col" ng-controller="ResumeController as Resume">
+                    <h5 class="text-center">Education</h5>
+                    <div class="row text-left" ng-repeat= "education in Resume.edu">
+                        <p> 
+                            <b>{{education.name}}</b> </br>
+                            {{education.expectedGraduation}} </br>
+                            {{education.Degree}}</br>
+                            <i>Relevant Courses:</i> {{education.RelevantCourse}} </br>
+                            <i>Highlights: </i>{{education.Highlights}} </br>
+                        </p> 
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="Tab" ng-show="Tab.isSelected(4)">
-            <h2 class="text-center">Contact</h2>
+        <div class="TabContact bg-dark" ng-show="Tab.isSelected(4)">
         </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
