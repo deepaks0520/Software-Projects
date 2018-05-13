@@ -1,0 +1,20 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "This calendar will integrate google calendars with Facebook events.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deepak Subramanian",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-route": "^1.6.9",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "facebook-events-by-location-core": "^0.11.0",
+    "jquery": "^3.3.1",
+    "request": "^2.85.0"
+  }
+}

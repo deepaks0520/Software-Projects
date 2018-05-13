@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="IC">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">                
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>        
+        <script type="text/javascript" src="core.js"></script>  
+        <script type="text/javascript" src="myFunctions.js"></script>  
+        
+        
+        <title>Your Calendar</title>          
+    </head>
+    
+    <body >
+        <h1 class="text-center">
+            Interactive Calendar
+        </h1>
+
+        <div ng-controller="EventC as EC">
+            <form id="myForm">
+                <input type="text" class="ghost-input" placeholder="Enter a City" ng-model="EC.city.text">
+                <input type="submit" class="ghost-button" ng-click="EC.findEvents()" value="Find Events in City" onclick="myFunction()">
+            </form>
+            </br>    
+            <div class="container-fluid">
+                <div class=" cardDiv row flex-row flex-nowrap">
+                    <div class="col-4"  ng-repeat="event in EC.events">
+                        </br>
+                        <div class="mainCard card card-block">
+                            <div class="cardTitle">
+                                <b>{{event.name.text}}</b>
+                            </div>
+                            
+                            <div>
+                                <img class="cardImage" src={{event.logo.original.url}}>
+                            </div>
+
+                            <div class="cardLink">
+                                <a href={{event.url}}>Link to Event</a>
+                            </div>
+                            
+                            Date:
+                            <div class="cardDate">
+                                {{EC.convertDate(event.start.local, event.end.local)}}
+                                </br>
+                                {{EC.convertTime(event.start.local)}} - {{EC.convertTime(event.end.local)}}
+                           </div>
+
+                            Description: 
+                            <div class="cardDescription">
+                                {{event.description.text}}
+                            </div>
+                        </div>
+                        </br>                    
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </body>
+</html>
