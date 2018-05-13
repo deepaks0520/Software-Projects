@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="personalWebsite">
+    <meta http-equiv="Cache-control" content="public" max-age="31536000">
+        
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">                
+        <title>Deepak Subramanian</title>          
+    </head>
+
+    <body  ng-controller="TabController as Tab"> </body>
+        <link rel="stylesheet" href="personal.css"/>  
+        
+        <div class="topHeader bg-dark text-right">
+            <br>
+            Linkedln
+            <br>
+        </div>
+        
+        <div class="jumbotronHome jumbotron-fluid text-center"> 
+            <div class="Tab2 bg-dark container-fluid" ng-show="Tab.isSelected(1)">                    
+                <br><br>                    
+                <h1>Deepak Subramanian</h1>
+                <p> University of Michigan 2020</p>
+                <p>BE in Computer Engineering</p>
+                <p>Minor in Entrepreneurship </p>
+                <br><br>
+            </div>
+        </div>
+        
+        <div class="jumbotronProjects text-center">                                        
+             <div class="TabProjects bg-dark container-fluid" ng-show="Tab.isSelected(2)">
+                <br><br><br><br><br><br><br><br><br><br><br><br>              
+            </div>
+        </div>
+
+        <div class="jumbotronResume text-center">                        
+                <div class="TabResume bg-primary" ng-show="Tab.isSelected(3)">
+                <br><br><br><br><br><br><br><br><br><br><br><br>              
+            </div>
+        </div>
+
+        <div class="jumbotronContact text-center">                        
+                <div class="TabContact bg-primary" ng-show="Tab.isSelected(4)">
+                 <br><br><br><br><br><br><br><br><br><br><br><br>                  
+            </div>
+        </div>
+
+        <div class="navMain p-3 bg-dark container-fluid" ng-show="Tab.isSelected(1)">
+            <ul class="nav nav-pills nav-justified">
+                <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
+                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">Projects</a> 
+                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Resume</a> 
+                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Contact</a> 
+            </ul>
+        </div>
+
+        <div class="navOther p-3 bg-dark container-fluid" ng-show="Tab.isSelected(2)">
+            <ul class="nav nav-pills nav-justified">
+                <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
+                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">Projects</a> 
+                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Resume</a> 
+                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Contact</a> 
+            </ul>
+        </div>
+
+        <div class="navOther p-3 bg-dark container-fluid" ng-show="Tab.isSelected(3)">
+            <ul class="nav nav-pills nav-justified">
+                <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
+                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">Projects</a> 
+                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Resume</a> 
+                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Contact</a> 
+            </ul>
+        </div>
+
+        <div class="navOther p-3 bg-dark container-fluid" ng-show="Tab.isSelected(4)">
+            <ul class="nav nav-pills nav-justified">
+                <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
+                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">Projects</a> 
+                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Resume</a> 
+                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Contact</a> 
+            </ul>
+        </div>
+
+        <div class="cardProjects " ng-show="Tab.isSelected(2)" ng-controller="ProjectController as Project">
+            <div class="card w-100 bg-dark text-white" ng-repeat="project in Project.projects">
+                <br>
+                <h5 class="card-title" style="text-align: center"> <b>{{project.name}}</b></h5>
+                <p class="card-text"><b>Project Date: </b>{{project.date}}</p>
+                <p class="card-text"><b>Project Description: </b>{{project.description}}</p>
+                <p class="card-text"><b>Main Skills Learnt: </b>{{project.mainSkills}}</p> 
+                <br />              
+            </div>
+        </div>
+        <div class="Tab bg-dark text-white" ng-show="Tab.isSelected(3)">
+            <br>
+            <div class="row">
+                <div class="col Ex" ng-controller="ExperienceController as Experience">
+                    <h5 class="text-center">Work Experience</h5>
+                    <div class="card w-100 bg-dark text-white" ng-repeat="jobs in Experience.ex">
+                        <p class="card-text">
+                            <b>{{jobs.name}}</b> </br>                                 
+                            {{jobs.dates}} </br>
+                            {{jobs.position}} </br>
+                            <i>Description: </i>
+                            <div class="MarginNeeded">
+                            {{jobs.task1}} </br>
+                            {{jobs.task2}} </br>
+                            {{jobs.task3}} </br>
+                            {{jobs.task4}} </br> 
+                            </div>
+                            </br>
+                        </p>                  
+                    </div>
+                    <h5 class="text-center">Research Experience</h5>
+                    <div class="card w-100 bg-dark text-white" ng-repeat="research in Experience.re">
+                        <p class="card-text">
+                            <b>{{research.name}}</b> </br>                                 
+                            {{research.dates}} </br>
+                            {{research.position}} </br>
+                            <i>Description: </i>
+                            <div class="MarginNeeded">
+                            {{research.task1}} </br>
+                            {{research.task2}} </br>
+                            </div>
+                            </br>
+                        </p>                  
+                    </div>
+                    <h5 class="text-center">Extracurriculars</h5>
+                    <div class="card w-100 bg-dark text-white" ng-repeat="extr in Experience.ext">
+                        <p class="card-text">
+                            <b>{{extr.name}}</b> </br>                                 
+                            {{extr.dates}} </br>
+                            {{extr.position}} </br>
+                            <i>Description: </i>
+                            <div class="MarginNeeded">
+                            {{extr.task1}} </br>
+                            {{extr.task2}} </br>
+                            </div>
+                            </br>
+                        </p>                  
+                    </div>
+                </div>
+                <div class="col Ed" ng-controller="ResumeController as Resume">
+                    <h5 class="text-center">Education</h5>
+                    <div class="card w-100 bg-dark text-white" ng-repeat="education in Resume.edu">                
+                        <p class="card-text"> 
+                            <b>{{education.name}}</b> </br>
+                            {{education.expectedGraduation}} </br>
+                            {{education.Degree}}</br>
+                            <i>Relevant Courses:</i> {{education.RelevantCourse}} </br>
+                            <i>Highlights: </i>{{education.Highlights}} </br> 
+                            </br>
+                        </p> 
+                    </div>
+                    <h5 class="text-center">Skills</h5>
+                    <div class="card w-100 bg-dark text-white" ng-repeat="skills in Resume.sk">                
+                        <p class="card-text"> 
+                            <b>{{skills.name}}</b> </br>
+                            {{skills.Languages}} </br>
+                            </br>
+                        </p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Tab bg-dark text-white" ng-show="Tab.isSelected(4)">
+            </br>
+            <div class="row Main1">
+                <div class="col main1L text-left">
+                    <h2>Contact</h2>
+                </div>
+                <div class="col main2R text-right">
+                    <h5>Deepak Subramanian</h5>
+                </div>
+            </div>
+            </br>
+            <div class = "row Main2">
+                <div class="col">
+                    Email </br>
+                    <a href="mailto:deepaksm@umich.edu">deepaksm@umich.edu</a>                    
+                </div>
+                <div class="col">
+                    GitHub </br>
+                    <a href="https://github.com/deepaks0520/Software-Projects">/deepaks0520</a>
+                </div>
+                <div class="col">
+                    Linkedln </br>
+                    <a href="www.linkedin.com/in/deepak-subramanian-069119148
+                    ">/deepak-subramanian</a>
+                </div>
+            </div>
+            </br> </br> </br> </br> </br> </br> </br></br>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+
+    </body>
+</html>
