@@ -12,27 +12,31 @@ body{
 .cardDiv{
     background-color: tan;
     overflow: auto;
-    
 }
 
 .cardTitle {
+    align-items: center;
     text-align: center;
 }
 
 .cardImage {
-    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     height: 150px;
     border-radius: 25px;
+    border: 1px solid;
+    border-color: black;
     
 }
 
-.cardLink {
+.cardAddEvent {
     text-align: center;
 }
 
 .cardDate{
-    text-align: left;
-    margin-left: 20px;
+    text-align: center;
 }
 
 .cardDescription {
@@ -40,6 +44,17 @@ body{
     overflow: auto;
     margin-left: 20px;
 }
+
+.cityName{
+    text-align: center;
+}
+iframe{
+    display:block;
+    width: 100%;
+}
+
+#This starts the Welcome Page CSS
+
 
 
 

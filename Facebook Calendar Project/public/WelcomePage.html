@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html ng-app="IC">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">                
+        <link rel="stylesheet" type="text/css" href="style2.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>        
+        <script type="text/javascript" src="core.js"></script>  
+        <script type="text/javascript" src="myFunctions.js"></script> 
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        
+        
+        <title>Your Calendar</title>          
+    </head>
+    
+    <body ng-controller="EventC as EC" >
+        <div id="demo" class="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active NYC">
+                    <div class="carousel-header">
+                        <h1 class="display-3">Interactive Calendar</h1>
+                    </div>                    
+                    <div class="carousel-button btn-lg" ng-if="EC.Signed != 1">
+                        <input type="submit" class="ghost-button" ng-click="EC.signIn()" value="Login to View Calendar">                                       
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Sign In</h3>
+                        <p>Sign in to your email to display your most current calendar.</p>
+                    </div>    
+                </div>
+                <div class="carousel-item Chicago">
+                    <div class="carousel-header">
+                        <h1 class="display-3">Interactive Calendar</h1>
+                    </div>
+                    <div class="carousel-button btn-lg" ng-if="EC.Signed != 1">
+                        <input type="submit" class="ghost-button" ng-click="EC.signIn()" value="Login to View Calendar">                                       
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Search for Events</h3>
+                        <p>Enter the city of interest to start finding nearby events.</p>
+                    </div>
+                </div>
+                <div class="carousel-item SF">
+                    <div class="carousel-header">
+                        <h1 class="display-3">Interactive Calendar</h1>
+                    </div>
+                    <div class="carousel-button btn-lg" ng-if="EC.Signed != 1">
+                        <input type="submit" class="ghost-button" ng-click="EC.signIn()" value="Login to View Calendar">                                       
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Add Events</h3>
+                        <p>With a simple click of a button, add any number of events to calendar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </body>
+</html>
