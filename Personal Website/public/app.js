@@ -20,19 +20,27 @@
             name: 'Personal Website',
             date: 'May - August 2018',
             description: 'I designed a personal website to show my portfolio of skills and projects',
-            mainSkills: 'Angular.js, Boostrap, html, css, javaScript'
+            mainSkills: 'Angular.js, Boostrap, HTML, CSS',
+            size: '20'
         },
         {
             name: 'Integrated Calendar',
-            date: 'May - August 2018',
-            description: "I designed a website that integrates one's Gmail calendar with one Facebook and Linkedln Events. This enables them to find events that fit their schedule and allows them to their calendar. Also created a mobile application where one can have the same functionality.",
-            mainSkills: 'Angular.js, Boostrap, html, css, javaScript, Gmail APIs, Facebook APIs, Linkedln APIs'
+            date: 'May - June 2018',
+            description: "I designed a website that integrates one's Gmail calendar with a public database of events from EventBrite. This enables them to find events that fit their schedule and allows them to their calendar. The website also has sorting capabilities based on categories",
+            mainSkills: 'Angular.js, Boostrap, HTML, CSS, Google Calendar API, Google Authentication API, Eventbrite API'
         },
         {
-            name: 'Health Related CS Project',
-            date: 'May - August 2018',
-            description: "IDK yet",
-            mainSkills: ' Not Sure'
+            name: 'Personal Accountant',
+            date: 'June - July 2018',
+            description: "I designed a website that allows users to create an account and have a platform where that can help them budget their money. In the website, users can enter their expenses, income, and a targeted budget. The website will store this information in a database and display the information to the user in the form of graphs and tables. This platform will both be in two forms: a website and native mobile application.",
+            mainSkills: 'Mean Stack (MongoDB, Express.js, Angular 5, Node.js), ReactNative.js'
+        },
+        {
+            name: 'Entrepreneurial Platform',
+            data: 'July - August 2018',
+            description: "I designed a platform that allows entrepreneurs to publicize their project ideas and easily find people of different skillsets. I created this platform both as a website and a native mobile application. The website also contains a chat box to allows users to easily communicate with the entrepreneurs about the project.",
+            mainSkills: "MEAN Stack (MongoDB, Express.js, Angular 5, Node.js), Android Mobile SDK (Java)"
+        
         }
     ];
 
@@ -63,11 +71,19 @@
     var skills = [
         {
             name: 'High Level Coding Languages',
-            Languages: 'C++, C#, Python, MATLAB',
+            Languages: 'C++, Python, MATLAB',
         },
         {
             name: 'Web Development',
-            Languages: 'HTML, JavaScript, Angular.js, Meteor, Three.js, Node.js, Bootstrap, mongoDB',
+            Languages: 'HTML, JavaScript, Angular, Meteor, Three.js, Node.js, Bootstrap, mongoDB, Mongoose',
+        },
+        {
+            name: 'Mobile Development',
+            Languages: 'React Native',
+        },
+        {
+            name: "Machine Learning",
+            Languages: 'TensorFlow',
         },
         {
             name: 'Sripting Languages',
@@ -107,9 +123,9 @@
             name: 'Human Computer Interaction Institute (HCII) at Carnegie Mellon',
             dates: 'May - August 2018',
             position: 'Researcher',
-            task1: '',
-            task2: '',
-            task3: '',
+            task1: 'Designed a system that would use machine larning to analyze video data gathered by a Kinect depth camera to classify different exercises.',
+            task2: 'Conducted an experiment to determine whether a single frame analysis of an exercise or a multiple frame (full sequence of exercise) provided more accurate and efficient results to predict a future exercise.',
+            task3: 'This system was developed in real time to be implemented as a cognitive assistant that can provide feedback to back therapy patients to perform the certain exercises better.',
             task4: ''
         },
         {
@@ -119,7 +135,7 @@
             task1: 'Shadowed the IT infrastructure team and gained an understanding of network infrastructure and the importance it plays with software development; also gained a deeper understanding of the future of network infrastructure with different cloud models.',
             task2: 'Set up Virtual Machines by downloading different operating systems on each; set up a virtual machine to host Active Directory.',
             task3: 'Used PowerShell to write a script that enabled the security team to remove workers from Active Directory given a text file.',
-            task4: 'Programmed with HTML and JavaScript to create a webpage that outlines important IT events in given year’s calendar.'
+            task4: 'Created a simple webpage that outlines important IT events in a given year’s calendar.'
         },
         {
             name: 'Sarah Cannon Cancer Research Institute',

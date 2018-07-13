@@ -6,16 +6,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">                
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Deepak Subramanian</title>          
     </head>
 
     <body  ng-controller="TabController as Tab"> </body>
-        <link rel="stylesheet" href="personal.css"/>  
+        <link rel="stylesheet" href="/style/personal.css"/>  
         
         <div class="topHeader bg-dark text-right">
-            <br>
-            Linkedln
-            <br>
+            <a href="https://github.com/deepaks0520/Software-Projects" style="color: #f5f5f5"><i class="fa fa-github-square" style="font-size:50px"></i> </a>  
+            <a href="https://linkedin.com/in/deepak-subramanian-069119148" style="color: #0077B5"><i class="fa fa-linkedin-square" style="font-size:50px"></i></a>                                 
         </div>
         
         <div class="jumbotronHome jumbotron-fluid text-center"> 
@@ -84,12 +84,13 @@
         </div>
 
         <div class="cardProjects " ng-show="Tab.isSelected(2)" ng-controller="ProjectController as Project">
+
             <div class="card w-100 bg-dark text-white" ng-repeat="project in Project.projects">
                 <br>
                 <h5 class="card-title" style="text-align: center"> <b>{{project.name}}</b></h5>
                 <p class="card-text"><b>Project Date: </b>{{project.date}}</p>
                 <p class="card-text"><b>Project Description: </b>{{project.description}}</p>
-                <p class="card-text"><b>Main Skills Learnt: </b>{{project.mainSkills}}</p> 
+                <p class="card-text"><b>Main Skills Learned: </b>{{project.mainSkills}}</p> 
                 <br />              
             </div>
         </div>
@@ -184,14 +185,28 @@
                 </div>
                 <div class="col">
                     GitHub </br>
-                    <a href="https://github.com/deepaks0520/Software-Projects">/deepaks0520</a>
+                    <a href="https://github.com/deepaks0520/Software-Projects" style="color: #f5f5f5"><i class="fa fa-github-square" style="font-size:50px"></i> </a>                    
                 </div>
                 <div class="col">
-                    Linkedln </br>
-                    <a href="www.linkedin.com/in/deepak-subramanian-069119148
-                    ">/deepak-subramanian</a>
+                    LinkedIn </br>                        
+                    <a href="https://linkedin.com/in/deepak-subramanian-069119148" style="color: #0077B5"><i class="fa fa-linkedin-square" style="font-size:50px"></i></a>                                 
                 </div>
             </div>
+            <div class="contactForm">
+                <br>
+                <h3>You can ask me a question by submitting this form: </h3>
+                <form action="mailto:deepaksmanian@gmail.com" method="post" enctype="text/plain">
+                    Name:<br>
+                    <input type="text" name="name"><br>
+                    E-mail:<br>
+                    <input type="text" name="mail"><br>
+                    Question:<br>
+                    <input type="text" name="comment" size="50"><br><br>
+                    <input type="submit" value="Send Email">
+                    <input type="reset" value="Reset Form">
+                </form>
+            </div>
+
             </br> </br> </br> </br> </br> </br> </br></br>
         </div>
 
@@ -199,7 +214,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script type="text/javascript" src="angular.min.js"></script>
-        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="/scripts/app.js"></script>
 
     </body>
 </html>

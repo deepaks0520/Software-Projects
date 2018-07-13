@@ -69,6 +69,8 @@ html {
 .Main2 {
     margin-left: 13%;
     margin-right: 13%;
+    border-bottom: 1px solid darkslategray;
+    
 }
 
 .navMain {
@@ -106,6 +108,10 @@ html {
 
 .Ed {
     margin-right: 2%;
+}
+
+.contactForm {
+    text-align: center;
 }
 
 
