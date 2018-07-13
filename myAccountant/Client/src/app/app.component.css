@@ -1,0 +1,8 @@
+.mainHeader {
+    text-align: center;
+}
+.navbar-nav {
+    height: 9%;
+    display:flex;
+    justify-content:center;
+  }
