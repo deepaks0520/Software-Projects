@@ -6,7 +6,9 @@
       <li> <a routerLink="yearlyChart"> Year Summary </a> </li>
     </ul>
   </nav>
-  <button (click)=signOut()> Sign Out </button>
+
+  <button class="btn-danger" (click)="signOut()" style="font-size:24px">Sign Out <i class="  fa fa-sign-out"></i></button>
+  <br>
   <router-outlet></router-outlet>  
   
 </div>

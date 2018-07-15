@@ -1,2 +1,40 @@
-Sign Up
-<button (click)="login()"> Testing Route</button>
+<div class="formCSS">
+    <div class="formStyle">
+        <h2>Sign Up</h2> 
+    </div>
+    <form (submit)="signUp()">
+        <div class="form-group formBody">
+            <label> Name </label>
+            <input placeholder="Enter your name" type="text" [(ngModel)]="name" name="name" class="form-control">
+        </div>
+        
+        <div class="form-group formBody">
+            <label> Username </label>
+            <input  placeholder="Enter your username" type="text" [(ngModel)]="username" name="username" class="form-control">
+        </div>
+        
+        <div class="form-group formBody">
+            <label> Email </label>
+            <input  placeholder="Enter your email" type="text" [(ngModel)]="email" name="email" class="form-control">
+        </div>
+
+        <div class="form-group formBody">
+            <label> Password </label>
+            <input  placeholder="Enter your password" type="password" [(ngModel)]="password" name="password" class="form-control">
+        </div>
+
+        <div class="formSubmit">
+            <button (click) = "back()" style="font-size:24px" class="btn-primary">Back 
+                <i class="fa fa-toggle-left"></i> 
+            </button> 
+            &nbsp;                  
+            <button class="btn-success" type="submit" style="font-size:24px">
+                <i class="fa fa-user-plus"></i> Sign Up
+            </button>
+        </div>
+        <br>
+        
+    </form>
+</div>
+
+

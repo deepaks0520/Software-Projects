@@ -1,10 +1,22 @@
-<div class="navContainer">
+<div class= "background">
   <div>
-     <button (click) = "logIn()">Log In</button>  
+    <br>
+    <br>
+    <br>
   </div>
-  <div>
-      <button (click)="signUp()"> Sign Up</button>
+  <div class="jumbotron jumboBackground">
+    <div class= "jumboHeader">
+      <h2> Welcome to your Personal Accountant</h2>
+    </div>
+    <div class = "jumboHeader">
+      <p> This platform will help you budget yourself with the use of charts, graphs, and personal alerts.</p>
+      <br>
+    </div>
+    <div class = "jumboButtons">
+      <button class="btn-primary" (click) = "logIn()" style="font-size:24px">Log In <i class="fa fa-sign-in"></i></button>   
+      &nbsp;                        
+      <button class="btn-info" (click)="signUp()" style="font-size:24px">Sign Up <i class="fa fa-user-plus"></i></button>
+    </div>
   </div>
-  <router-outlet></router-outlet>        
-  
 </div>
+

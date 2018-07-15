@@ -1,5 +1,21 @@
-.navbar {
-    height: 9%;
-    display:flex;
-    justify-content:center;
-  }
+.jumboHeader {
+  text-align: center;
+}
+
+.jumboButtons {
+  text-align: center;
+}
+
+.background {
+  background-image: url("../../../public/images/homeImage.jpg");
+  background-size: 100% 100%;
+  height: 100vh;
+}
+
+.jumboBackground {
+  opacity: .8;
+  margin-top: 0%;
+}
+
+
+

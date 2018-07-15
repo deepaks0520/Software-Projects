@@ -11,7 +11,12 @@ import { YearlyChartComponent } from './yearly-chart/yearly-chart.component';
 import { TableComponent } from './table/table.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
+import { ValidateService} from './services/validate.service';
+import {FlashMessagesModule} from 'angular2-flash-messages'; 
+import { AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +31,12 @@ import { LogInComponent } from './log-in/log-in.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    FlashMessagesModule.forRoot(),
+    HttpModule
   ],
-  providers: [],
+  providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

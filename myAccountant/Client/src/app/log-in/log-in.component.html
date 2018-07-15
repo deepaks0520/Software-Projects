@@ -1,3 +1,30 @@
-Log In
+<div class="formCSS">
+    <div class="formStyle">
+        <h2>Sign In </h2> 
+    </div>
+    <form (submit)="login()">
+        <div class="form-group formBody">
+            <label> Username </label>
+            <input  placeholder="Enter your username" type="text" [(ngModel)]="username" name="username" class="form-control">
+        </div>
 
-<button (click)="login()"> Testing Route</button>
+        <div class="form-group formBody">
+            <label> Password </label>
+            <input  placeholder="Enter your password" type="password" [(ngModel)]="password" name="password" class="form-control">
+        </div>
+
+        <div class="formSubmit">
+            <button (click) = "back()" style="font-size:24px" class="btn-primary">Back 
+                <i class="fa fa-toggle-left"></i> 
+            </button> 
+            &nbsp;                  
+            <button class="btn-success" type="submit" style="font-size:24px">
+                <i class="fa fa-sign-in"></i> Sign In
+            </button>
+        </div>
+        <br>
+        
+    </form>
+</div>
+
+
