@@ -123,9 +123,9 @@
             name: 'Human Computer Interaction Institute (HCII) at Carnegie Mellon',
             dates: 'May - August 2018',
             position: 'Researcher',
-            task1: 'Designed a system that would use machine larning to analyze video data gathered by a Kinect depth camera to classify different exercises.',
-            task2: 'Conducted an experiment to determine whether a single frame analysis of an exercise or a multiple frame (full sequence of exercise) provided more accurate and efficient results to predict a future exercise.',
-            task3: 'This system was developed in real time to be implemented as a cognitive assistant that can provide feedback to back therapy patients to perform the certain exercises better.',
+            task1: 'Designed a cognitive assistant system that would use machine learning to analyze video data gathered by a Kinect depth camera to classify different exercises.',
+            task2: 'Conducted an experiment to determine whether a single frame analysis of an exercise or a multiple frame analysis (full sequence of exercise) provided more accurate and efficient results to predict a future exercise.',
+            task3: 'This system performs in real time and can provide feedback to back therapy patients to perform the certain exercises better.',
             task4: ''
         },
         {
@@ -153,8 +153,8 @@
             name: 'CROMA Lab, Robo Affordances',
             dates: 'October 2017 - Present',
             position: 'Undergraduate Research Assistant',
-            task1: 'Conducting research to create a user interface that allows crowd-workers to analyze a scene in real-time and provide sufficient information to populate an affordance template for robots',
-            task2: 'Implementing different design features using Three.js that enables the crowd-workers to draw a path to outline the movement of an object given a 3D point plane; using a meteor framework and a mongo database',
+            task1: 'Conducting research to create a user interface that allows crowd-workers to analyze a scene in real-time and provide sufficient information to populate an affordance template for robots.',
+            task2: 'Implementing different design features using Three.js that enables the crowd-workers to draw a path to outline the movement of an object given a 3D point plane.',
         }
     ];
 
@@ -177,7 +177,7 @@
             name: 'M-Hacks',
             dates: 'October 2017 - Present',
             position: 'Team Member',
-            task1: 'Developed a website to integrate Linedln, Google Calendar, and Facebook Events.'
+            task1: 'Developed a website to integrate Linedln, Google Calendar, and Facebook Events. Did not complete so finished the project on my own.'
         },
         {
             name: 'IEEE',
