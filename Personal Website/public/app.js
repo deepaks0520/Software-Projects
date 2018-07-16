@@ -54,7 +54,6 @@
             name: ' University of Michigan',
             expectedGraduation: ' April 2020',
             Degree: 'Bachelors of Science in Engineering in Computer Engineering, Minor in Entrepreneurship',
-            GPA: '3.5',
             RelevantCourse: 'EECS 203 (Discrete Math), EECS 281 (Data Structure and Algorithms), EECS 270 ( Logic Design), EECS 492 (Artificial Intelligence), EECS 370 (Computer Organization)',
             Highlights: 'Engineering Scholarship of Honors/Geisinger (Academic Excellence), Nashville Alumni Scholarship, Dean’s List, University Honors'
         },
@@ -62,7 +61,6 @@
             name: 'Franklin High School',
             expectedGraduation: 'May 2016',
             Degree: 'High School Degree, IB Diploma',
-            GPA: '4.7',
             RelevantCourse: 'AP Calculus',
             Highlights: 'Salutatorian, IB Diploma, Gifted Child, Governor’s School of Emerging Technologies'
         },
@@ -103,7 +101,7 @@
         },
         {
             name: 'Languages Spoken',
-            Languages: 'English, Spanish, Tamil, Telugu'
+            Languages: 'English, Spanish, Tamil'
         },
         {
             name: 'Soft Skills',
@@ -126,7 +124,7 @@
             task1: 'Designed a cognitive assistant system that would use machine learning to analyze video data gathered by a Kinect depth camera to classify different exercises.',
             task2: 'Conducted an experiment to determine whether a single frame analysis of an exercise or a multiple frame analysis (full sequence of exercise) provided more accurate and efficient results to predict a future exercise.',
             task3: 'This system performs in real time and can provide feedback to back therapy patients to perform the certain exercises better.',
-            task4: ''
+            task4: 'https://github.com/capellb1/CMU_HCII_REU'
         },
         {
             name: 'Geodis',
