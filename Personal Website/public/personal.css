@@ -1,19 +1,19 @@
 body { 
     /* The image used */
     /*background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");*/
-    background-image: url('Images/Duderstadt.jpg');
+    background-image: url('Images/Banff.jpg');
 
     /* Full height */
-    height: 100vh; 
+    height: 100vh;
 
     margin-left: 0;
     margin-right: 0;
     padding: 0;
 
     /* Center and scale the image nicely */
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 html {
@@ -36,35 +36,68 @@ html {
     width: 100%;
 }
 
+.profile {
+    height: 68%;
+    width: 50%;
+    border-radius: 50%;
+    border: 1px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+
+ul a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+ul a:hover {
+    background-color: #111;
+}
+
+
 .TabProjects {
     background-color: transparent;
-    background-image: url('Images/EECS.jpg');
+    background-image: url('Images/Computers.jpg');
     background-size: 100% 100%;
     width: auto;
     padding-bottom: 0;    
 }
 
+.TabAboutMe {
+    background-image: url('Images/Technology.png');        
+    padding-bottom: 0;
+    background-size:  100% 100%;
+    width: auto;
+    background-repeat: no-repeat;
+    
+}
+
 .TabResume {
     background-color: transparent; 
     padding-bottom: 0;
-    background-image: url('Images/Michigan2.jpg');
+    background-image: url('Images/MichiganLogo.png');
     background-size: 100% 100%;
     width: auto;
 }
 
 .TabContact{
     padding-bottom: 0;
-    background-image: url('Images/Computers.jpg');
+    background-image: url('Images/Cool Background.jpg');    
     background-size: 100% 100%;
     width: auto;
 }
 
-
-.jumbotronHome {
-    padding-bottom: 0;
-    background-size: 100% 100%;
-    
-}
 
 .Main1 {
     margin-left: 11%;
@@ -79,11 +112,13 @@ html {
 }
 
 .navMain {
+    margin-top: 0%;
     opacity: .95;
     border-bottom: 1px solid darkslategray;
 }
 
 .navOther {
+    margin-top: 0%;
     border-bottom: 1px solid darkslategray;
 }
 

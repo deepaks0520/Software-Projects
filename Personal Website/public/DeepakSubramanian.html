@@ -4,86 +4,142 @@
         
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">                
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Deepak Subramanian</title>          
     </head>
 
-    <body  ng-controller="TabController as Tab"> </body>
+    <body  ng-controller="TabController as Tab"> 
         <link rel="stylesheet" href="/style/personal.css"/>  
         
         <div class="topHeader bg-dark text-right">
-            <a href="https://github.com/deepaks0520/Software-Projects" style="color: #f5f5f5"><i class="fa fa-github-square" style="font-size:50px"></i> </a>  
-            <a href="https://linkedin.com/in/deepak-subramanian-069119148" style="color: #0077B5"><i class="fa fa-linkedin-square" style="font-size:50px"></i></a>                                 
+            <a href="https://github.com/deepaks0520/Software-Projects" style="color: #f5f5f5"><i class="fa fa-github-square" style="font-size:40px"></i> </a>  
+            <a href="https://linkedin.com/in/deepak-subramanian-069119148" style="color: #0077B5"><i class="fa fa-linkedin-square" style="font-size:40px"></i></a>                                 
         </div>
         
         <div class="jumbotronHome jumbotron-fluid text-center"> 
             <div class="Tab2 bg-dark container-fluid" ng-show="Tab.isSelected(1)">                    
-                <br><br>                    
+                <br>                    
                 <h1>Deepak Subramanian</h1>
                 <p> University of Michigan 2020</p>
                 <p>BE in Computer Engineering</p>
                 <p>Minor in Entrepreneurship </p>
-                <br><br>
+                <br>
             </div>
         </div>
         
+        <div class="jumbotronAboutMe text-center">                                        
+             <div class="TabAboutMe bg-dark container-fluid" ng-show="Tab.isSelected(2)">
+                <br><br><br><br><br><br><br><br><br><br>              
+            </div>
+        </div>
+
         <div class="jumbotronProjects text-center">                                        
-             <div class="TabProjects bg-dark container-fluid" ng-show="Tab.isSelected(2)">
-                <br><br><br><br><br><br><br><br><br><br><br><br>              
+             <div class="TabProjects bg-dark container-fluid" ng-show="Tab.isSelected(3)">
+                <br><br><br><br><br><br><br><br><br><br>              
             </div>
         </div>
 
         <div class="jumbotronResume text-center">                        
-                <div class="TabResume bg-primary" ng-show="Tab.isSelected(3)">
-                    <br><br><br><br><br><br><br><br><br><br><br><br>              
-                </div>
+            <div class="TabResume bg-primary" ng-show="Tab.isSelected(4)">
+                <br><br><br><br><br><br><br><br><br><br>              
+            </div>
         </div>
 
         <div class="jumbotronContact text-center">                        
-                <div class="TabContact bg-primary" ng-show="Tab.isSelected(4)">
-                 <br><br><br><br><br><br><br><br><br><br><br><br>                  
+            <div class="TabContact bg-primary" ng-show="Tab.isSelected(5)">
+                <br><br><br><br><br><br><br><br><br><br>              
             </div>
         </div>
 
         <div class="navMain p-3 bg-dark container-fluid" ng-show="Tab.isSelected(1)">
             <ul class="nav nav-pills nav-justified">
                 <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
-                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">Projects</a> 
-                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Resume</a> 
-                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Contact</a> 
+                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">About Me</a> 
+                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Projects</a> 
+                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Resume</a> 
+                <a class="nav-item {active:Tab.isSelected(5)} nav-link" href ng-click="Tab.selectTab(5)">Contact</a>                 
             </ul>
         </div>
 
         <div class="navOther p-3 bg-dark container-fluid" ng-show="Tab.isSelected(2)">
             <ul class="nav nav-pills nav-justified">
                 <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
-                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">Projects</a> 
-                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Resume</a> 
-                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Contact</a> 
+                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">About Me</a> 
+                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Projects</a> 
+                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Resume</a> 
+                <a class="nav-item {active:Tab.isSelected(5)} nav-link" href ng-click="Tab.selectTab(5)">Contact</a>                 
             </ul>
         </div>
 
         <div class="navOther p-3 bg-dark container-fluid" ng-show="Tab.isSelected(3)">
             <ul class="nav nav-pills nav-justified">
                 <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
-                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">Projects</a> 
-                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Resume</a> 
-                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Contact</a> 
+                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">About Me</a> 
+                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Projects</a> 
+                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Resume</a> 
+                <a class="nav-item {active:Tab.isSelected(5)} nav-link" href ng-click="Tab.selectTab(5)">Contact</a>                 
             </ul>
         </div>
 
         <div class="navOther p-3 bg-dark container-fluid" ng-show="Tab.isSelected(4)">
             <ul class="nav nav-pills nav-justified">
                 <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
-                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">Projects</a> 
-                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Resume</a> 
-                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Contact</a> 
+                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">About Me</a> 
+                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Projects</a> 
+                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Resume</a> 
+                <a class="nav-item {active:Tab.isSelected(5)} nav-link" href ng-click="Tab.selectTab(5)">Contact</a>                 
             </ul>
         </div>
 
-        <div class="cardProjects " ng-show="Tab.isSelected(2)" ng-controller="ProjectController as Project">
+        <div class="navOther p-3 bg-dark container-fluid" ng-show="Tab.isSelected(5)">
+            <ul class="nav nav-pills nav-justified">
+                <a class="nav-item {active:Tab.isSelected(1)} nav-link"  href ng-click="Tab.selectTab(1) ">Home</a> 
+                <a class="nav-item {active:Tab.isSelected(2)} nav-link" href ng-click="Tab.selectTab(2)">About Me</a> 
+                <a class="nav-item {active:Tab.isSelected(3)} nav-link" href ng-click="Tab.selectTab(3)">Projects</a> 
+                <a class="nav-item {active:Tab.isSelected(4)} nav-link" href ng-click="Tab.selectTab(4)">Resume</a> 
+                <a class="nav-item {active:Tab.isSelected(5)} nav-link" href ng-click="Tab.selectTab(5)">Contact</a>                 
+            </ul>
+        </div>
+
+        <div class="Tab w-100 bg-dark text-white" ng-show="Tab.isSelected(2)">
+            </br>
+            <div class="row Main1">
+                <div class="col main1L text-center">
+                    <h2>Deepak Subramanian</h2>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col main1L text-center">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <img src="Images/Me in Banff.jpg" class="profile img-circle">
+                </div>
+                <div class="col main2R text-left">
+                    <br>    
+                    <h4>A Little About Me</h4>
+                    <br>
+                    <p> I am a rising Junior pursuing my Bachelor's Degree in Computer Engineering at the University of Michigan. I am interested in pursuing a career in software engineering, more specifically in intelligent systems or back-end development. </p>
+                    <p> Over the past two years, I have taken the fundamental programming classes at Michigan and have developed a strong understanding of data structures and algorithms. I have also worked on several projects outside the academic enviornment through clubs, internships, research, and in my personal time. You can find a complete list of my projects and skills on the Projects tab and Resume tab respectively. </p>
+                    <p> My most recent experience was this summer in CMU during which I developed a congitive assistant that used Machine Learning to assist patients through back therapy. You can ready more about this work on my GitHub link, which can be found on top of this page.</p>
+                    <br>
+                    <h4>What I am Looking For</h4>
+                    <br>
+                    <p>I am currently seeking a summer 2019 software internship where I will be either involved in back-end development or using machine learning to develop an inteligent system. Please contact me with the information provided in the Contacts tab.</p>
+                    
+                </div>
+            </div>
+            </br>
+            
+
+            </br> </br> </br> </br> </br> </br> </br></br>
+        </div>
+
+        <div class="cardProjects " ng-show="Tab.isSelected(3)" ng-controller="ProjectController as Project">
 
             <div class="card w-100 bg-dark text-white" ng-repeat="project in Project.projects">
                 <br>
@@ -94,7 +150,7 @@
                 <br />              
             </div>
         </div>
-        <div class="Tab w-100 bg-dark text-white" ng-show="Tab.isSelected(3)">
+        <div class="Tab w-100 bg-dark text-white" ng-show="Tab.isSelected(4)">
             <br>
             <div class="row">
                 <div class="col Ex" ng-controller="ExperienceController as Experience">
@@ -167,7 +223,7 @@
             </div>
         </div>
 
-        <div class="Tab w-100 bg-dark text-white" ng-show="Tab.isSelected(4)">
+        <div class="Tab w-100 bg-dark text-white" ng-show="Tab.isSelected(5)">
             </br>
             <div class="row Main1">
                 <div class="col main1L text-left">
