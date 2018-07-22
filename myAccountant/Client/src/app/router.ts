@@ -6,6 +6,8 @@ import { YearlyChartComponent } from './yearly-chart/yearly-chart.component';
 import { TableComponent } from './table/table.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { AddingIncomeExpenseComponent } from './adding-income-expense/adding-income-expense.component';
+
 
 
 export const appRoutes: Routes= [
@@ -26,14 +28,19 @@ export const appRoutes: Routes= [
         component: LogInComponent
     },
     {
-        path: 'afterSignInHome',
+        path: 'afterSignInHome/:JWT',
         component: AfterSigningInHomeComponent,
         children: [
-            { 
-                path: '', 
-                redirectTo: '/afterSignInHome/table', 
-                pathMatch: 'full' 
+            {
+                path: '',
+                pathMatch: 'prefix',
+                redirectTo: 'table'
             },
+            {
+                path: 'addingIncomeExpense',
+                component: AddingIncomeExpenseComponent,
+            }
+            
             {
                 path: 'table',
                 component: TableComponent,

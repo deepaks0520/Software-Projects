@@ -32,19 +32,21 @@ export class LogInComponent implements OnInit {
     }
 
     this.authService.signIn(user).subscribe(data => {
+      console.log(data)
       if (data.success){
         this.flashMessagesService.show("You have successfully signed in!", {cssClass: 'alert-success', timeout: '1000'});    
-        console.log("redirecting")          
-        this.router.navigate(['afterSignInHome']);              
+        console.log("redirecting to personal page")       
+        this.router.navigate(['/afterSignInHome', data.token]);              
       }
       else{
         this.flashMessagesService.show("Wrong Password", {cssClass: 'alert-danger', timeout: '1000'});    
-        console.log("Try Again")          
+        console.log("You entered the wrong passwor")          
       }
    })
   }
 
   back(){
+    console.log('redirecting to home page')
     this.router.navigate(['home']);      
   }
 }

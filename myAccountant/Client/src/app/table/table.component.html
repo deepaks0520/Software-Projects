@@ -1,1 +1,415 @@
-Table
+
+<div class="dropdown view">
+  <select [(ngModel)]="viewOption">
+      <option *ngFor="let opt of option" [value]="opt">
+           {{opt}}
+      </option>
+  </select>
+</div>
+
+<div class="tableParent" *ngIf="viewOption == 'Both'">
+    <div class="tableHead">
+        <h1> My Income </h1>
+    </div>
+    <div class="tableIncome">
+            <table class="table" *ngIf=show>
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            Income Name
+                            <div class="dropdown viewTable">
+                                <select [(ngModel)]="incomeNameOption" (ngModelChange)="incomeNameChanged()">
+                                    <option *ngFor="let opt of stringOptions" [value]="opt">
+                                    {{opt}}
+                                    </option>
+                                </select>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            Income Cost
+                            <div class="dropdown viewTable">
+                                <select [(ngModel)]="incomeCostOption" (ngModelChange)="incomeCostChanged()">
+                                    <option *ngFor="let opt of costOptions" [value]="opt">
+                                    {{opt}}
+                                    </option>
+                                </select>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            Income Category
+                            <div class="dropdown viewTable">
+                                <select [(ngModel)]="incomeCategoryOption" (ngModelChange)="incomeCategoryChanged()">
+                                    <option *ngFor="let opt of stringOptions" [value]="opt">
+                                    {{opt}}
+                                    </option>
+                                </select>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            Income Date
+                            <div class="dropdown viewTable">
+                                <select [(ngModel)]="incomeDateOption" (ngModelChange)="incomeDateChanged()">
+                                    <option *ngFor="let opt of dateOptions" [value]="opt">
+                                        {{opt}}
+                                    </option>
+                                </select>
+                            </div>
+                        </th>
+                        <th scope="col">Edit Income</th>    
+                        <th scope="col">Delete Income</th>                
+                    </tr>
+                </thead>
+                <tbody *ngFor="let in of user.income">
+                    <th *ngIf="!in.needUpdate" scope="row"> {{in.name}} </th>
+                    <td *ngIf="!in.needUpdate"> ${{in.cost}}</td>
+                    <td *ngIf="!in.needUpdate"> {{in.category}}</td>
+                    <td *ngIf="!in.needUpdate"> {{in.date}} </td>
+                    <td *ngIf="!in.needUpdate"> 
+                        <button class="btn-success" (click)="in.needUpdate = true" style="font-size:18px">Edit Income <i class="fa fa-edit"></i></button>
+                    </td>
+        
+                    <th *ngIf="in.needUpdate" scope="row"> 
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control mx-sm-1" [(ngModel)]="in.nameUpdate" name="in.name">
+                            </div>
+                        </form>
+                    </th>
+                    <td *ngIf="in.needUpdate">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control mx-sm-1" [(ngModel)]="in.costUpdate" name="in.cost">
+                            </div>
+                        </form>
+                    </td>
+                    <td *ngIf="in.needUpdate"> 
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control mx-sm-1" [(ngModel)]="in.categoryUpdate" name="in.category">
+                            </div>
+                        </form>
+                    </td>
+                    <td *ngIf="in.needUpdate"> 
+                        <form class="form-inline updateForm">
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="in.dateUpdate" name="in.date">
+                            </div>
+                        </form>
+                    </td>
+                    <td *ngIf="in.needUpdate" class="buttons">
+                        <button class="btn-success" (click)="editIncome(in)" style="font-size:18px">Submit Change <i class="fa fa-edit"></i></button>
+                        <br>
+                        <button class="btn-danger" (click)="cancelChanges(in)" style="font-size:18px">Cancel <i class="fa fa-edit"></i></button>    
+                    </td>
+        
+                    <td>      
+                        <button class="btn-danger" (click)="removeIncome(in._id)" style="font-size:18px">Remove Income <i class="fa fa-minus-circle"></i></button>
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    <br>
+    
+    <div class="tableHead">
+        <h1> My Expenses </h1>
+    </div>
+    <div class="tableExpense">
+        <table class="table" *ngIf=show>
+            <thead>
+                <tr>
+                    <th scope="col">
+                        Expense Name
+                        <div class="dropdown viewTable">
+                            <select [(ngModel)]="expenseNameOption" (ngModelChange)="expenseNameChanged()">
+                                 <option *ngFor="let opt of stringOptions" [value]="opt">
+                                    {{opt}}
+                                </option>
+                            </select>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        Expense Cost
+                        <div class="dropdown viewTable">
+                            <select [(ngModel)]="expenseCostOption" (ngModelChange)="expenseCostChanged()">
+                                 <option *ngFor="let opt of costOptions" [value]="opt">
+                                    {{opt}}
+                                </option>
+                            </select>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        Expense Category
+                        <div class="dropdown viewTable">
+                            <select [(ngModel)]="expenseCategoryOption" (ngModelChange)="expenseCategoryChanged()">
+                                 <option *ngFor="let opt of stringOptions" [value]="opt">
+                                    {{opt}}
+                                </option>
+                            </select>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        Expense Date
+                        <div class="dropdown viewTable">
+                            <select [(ngModel)]="expenseDateOption" (ngModelChange)="expenseDateChanged()">
+                                 <option *ngFor="let opt of dateOptions" [value]="opt">
+                                    {{opt}}
+                                </option>
+                            </select>
+                        </div>
+                    </th>
+                    <th scope="col">Edit Expense</th>    
+                    <th scope="col">Delete Expense</th>                
+                </tr>
+            </thead>
+            <tbody *ngFor="let ex of user.expense">
+                <th *ngIf="!ex.needUpdate" scope="row"> {{ex.name}} </th>
+                <td *ngIf="!ex.needUpdate"> ${{ex.cost}}</td>
+                <td *ngIf="!ex.needUpdate"> {{ex.category}}</td>
+                <td *ngIf="!ex.needUpdate"> {{ex.date}} </td>
+                <td *ngIf="!ex.needUpdate"> 
+                    <button class="btn-success" (click)="ex.needUpdate = true" style="font-size:18px">Edit Expense <i class="fa fa-edit"></i></button>
+                </td>
+    
+                <th *ngIf="ex.needUpdate" scope="row"> 
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control mx-sm-1" [(ngModel)]="ex.nameUpdate" name="ex.name">
+                        </div>
+                    </form>
+                </th>
+                <td *ngIf="ex.needUpdate">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control mx-sm-1" [(ngModel)]="ex.costUpdate" name="ex.cost">
+                        </div>
+                    </form>
+                </td>
+                <td *ngIf="ex.needUpdate"> 
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control mx-sm-1" [(ngModel)]="ex.categoryUpdate" name="ex.category">
+                        </div>
+                    </form>
+                </td>
+                <td *ngIf="ex.needUpdate"> 
+                    <form class="form-inline updateForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" [(ngModel)]="ex.dateUpdate" name="ex.date">
+                        </div>
+                    </form>
+                </td>
+                <td *ngIf="ex.needUpdate" class="buttons">
+                    <button class="btn-success" (click)="editExpense(ex)" style="font-size:18px">Submit Change <i class="fa fa-edit"></i></button>
+                    <br>
+                    <button class="btn-danger" (click)="cancelChanges(ex)" style="font-size:18px">Cancel <i class="fa fa-edit"></i></button>    
+                </td>
+    
+                <td>      
+                    <button class="btn-danger" (click)="removeExpense(ex._id)" style="font-size:18px">Remove Expense <i class="fa fa-minus-circle"></i></button>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="tableHead" *ngIf="viewOption == 'Income'">
+    <h1> My Income </h1>
+</div>
+<div class="tableIncome" *ngIf="viewOption == 'Income'">
+    <table class="table" *ngIf=show>
+        <thead>
+            <tr>
+                <th scope="col">
+                    Income Name
+                    <div class="dropdown viewTable">
+                        <select [(ngModel)]="incomeNameOption" (ngModelChange)="incomeNameChanged()">
+                            <option *ngFor="let opt of stringOptions" [value]="opt">
+                               {{opt}}
+                            </option>
+                        </select>
+                    </div>
+                </th>
+                <th scope="col">
+                    Income Cost
+                    <div class="dropdown viewTable">
+                        <select [(ngModel)]="incomeCostOption" (ngModelChange)="incomeCostChanged()">
+                            <option *ngFor="let opt of costOptions" [value]="opt">
+                               {{opt}}
+                            </option>
+                        </select>
+                    </div>
+                </th>
+                <th scope="col">
+                    Income Category
+                    <div class="dropdown viewTable">
+                        <select [(ngModel)]="incomeCategoryOption" (ngModelChange)="incomeCategoryChanged()">
+                            <option *ngFor="let opt of stringOptions" [value]="opt">
+                               {{opt}}
+                            </option>
+                        </select>
+                    </div>
+                </th>
+                <th scope="col">
+                    Income Date
+                    <div class="dropdown viewTable">
+                        <select [(ngModel)]="incomeDateOption" (ngModelChange)="incomeDateChanged()">
+                            <option *ngFor="let opt of dateOptions" [value]="opt">
+                                {{opt}}
+                            </option>
+                        </select>
+                    </div>
+                </th>
+                <th scope="col">Edit Income</th>    
+                <th scope="col">Delete Income</th>                
+            </tr>
+        </thead>
+        <tbody *ngFor="let in of user.income">
+            <th *ngIf="!in.needUpdate" scope="row"> {{in.name}} </th>
+            <td *ngIf="!in.needUpdate"> ${{in.cost}}</td>
+            <td *ngIf="!in.needUpdate"> {{in.category}}</td>
+            <td *ngIf="!in.needUpdate"> {{in.date}} </td>
+            <td *ngIf="!in.needUpdate"> 
+                <button class="btn-success" (click)="in.needUpdate = true" style="font-size:18px">Edit Income <i class="fa fa-edit"></i></button>
+            </td>
+
+            <th *ngIf="in.needUpdate" scope="row"> 
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control mx-sm-1" [(ngModel)]="in.nameUpdate" name="in.name">
+                    </div>
+                </form>
+            </th>
+            <td *ngIf="in.needUpdate">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control mx-sm-1" [(ngModel)]="in.costUpdate" name="in.cost">
+                    </div>
+                </form>
+            </td>
+            <td *ngIf="in.needUpdate"> 
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control mx-sm-1" [(ngModel)]="in.categoryUpdate" name="in.category">
+                    </div>
+                </form>
+            </td>
+            <td *ngIf="in.needUpdate"> 
+                <form class="form-inline updateForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" [(ngModel)]="in.dateUpdate" name="in.date">
+                    </div>
+                </form>
+            </td>
+            <td *ngIf="in.needUpdate" class="buttons">
+                <button class="btn-success" (click)="editIncome(in)" style="font-size:18px">Submit Change <i class="fa fa-edit"></i></button>
+                <br>
+                <button class="btn-danger" (click)="cancelChanges(in)" style="font-size:18px">Cancel <i class="fa fa-edit"></i></button>    
+            </td>
+
+            <td>      
+                <button class="btn-danger" (click)="removeIncome(in._id)" style="font-size:18px">Remove Income <i class="fa fa-minus-circle"></i></button>
+            </td>
+        </tbody>
+    </table>
+</div>
+
+<div class="tableHead" *ngIf="viewOption == 'Expense'">
+    <h1> My Expenses </h1>
+</div>
+<div class="tableExpense" *ngIf="viewOption == 'Expense'">
+        <table class="table" *ngIf=show>
+            <thead>
+                <tr>
+                    <th scope="col">
+                        Expense Name
+                        <div class="dropdown viewTable">
+                            <select [(ngModel)]="expenseNameOption" (ngModelChange)="expenseNameChanged()">
+                                 <option *ngFor="let opt of stringOptions" [value]="opt">
+                                    {{opt}}
+                                </option>
+                            </select>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        Expense Cost
+                        <div class="dropdown viewTable">
+                            <select [(ngModel)]="expenseCostOption" (ngModelChange)="expenseCostChanged()">
+                                 <option *ngFor="let opt of costOptions" [value]="opt">
+                                    {{opt}}
+                                </option>
+                            </select>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        Expense Category
+                        <div class="dropdown viewTable">
+                            <select [(ngModel)]="expenseCategoryOption" (ngModelChange)="expenseCategoryChanged()">
+                                 <option *ngFor="let opt of stringOptions" [value]="opt">
+                                    {{opt}}
+                                </option>
+                            </select>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        Expense Date
+                        <div class="dropdown viewTable">
+                            <select [(ngModel)]="expenseDateOption" (ngModelChange)="expenseDateChanged()">
+                                 <option *ngFor="let opt of dateOptions" [value]="opt">
+                                    {{opt}}
+                                </option>
+                            </select>
+                        </div>
+                    </th>
+                    <th scope="col">Edit Expense</th>    
+                    <th scope="col">Delete Expense</th>                
+                </tr>
+            </thead>
+            <tbody *ngFor="let ex of user.expense">
+                <th *ngIf="!ex.needUpdate" scope="row"> {{ex.name}} </th>
+                <td *ngIf="!ex.needUpdate"> ${{ex.cost}}</td>
+                <td *ngIf="!ex.needUpdate"> {{ex.category}}</td>
+                <td *ngIf="!ex.needUpdate"> {{ex.date}} </td>
+                <td *ngIf="!ex.needUpdate"> 
+                    <button class="btn-success" (click)="ex.needUpdate = true" style="font-size:18px">Edit Expense <i class="fa fa-edit"></i></button>
+                </td>
+    
+                <th *ngIf="ex.needUpdate" scope="row"> 
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control mx-sm-1" [(ngModel)]="ex.nameUpdate" name="ex.name">
+                        </div>
+                    </form>
+                </th>
+                <td *ngIf="ex.needUpdate">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control mx-sm-1" [(ngModel)]="ex.costUpdate" name="ex.cost">
+                        </div>
+                    </form>
+                </td>
+                <td *ngIf="ex.needUpdate"> 
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control mx-sm-1" [(ngModel)]="ex.categoryUpdate" name="ex.category">
+                        </div>
+                    </form>
+                </td>
+                <td *ngIf="ex.needUpdate"> 
+                    <form class="form-inline updateForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" [(ngModel)]="ex.dateUpdate" name="ex.date">
+                        </div>
+                    </form>
+                </td>
+                <td *ngIf="ex.needUpdate" class="buttons">
+                    <button class="btn-success" (click)="editExpense(ex)" style="font-size:18px">Submit Change <i class="fa fa-edit"></i></button>
+                    <br>
+                    <button class="btn-danger" (click)="cancelChanges(ex)" style="font-size:18px">Cancel <i class="fa fa-edit"></i></button>    
+                </td>
+    
+                <td>      
+                    <button class="btn-danger" (click)="removeExpense(ex._id)" style="font-size:18px">Remove Expense <i class="fa fa-minus-circle"></i></button>
+                </td>
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,56 @@
+<div class="formCSS">
+  <div class="formStyle">
+    <h2>Add Income </h2> 
+  </div>
+  <form (submit) = "addIncome()">
+    <div class="form-group formBody">
+      <label>Name of Income</label> 
+      <input class="form-control" placeholder="Please enter the name of the income" type="text" [(ngModel)]="incomeName" name="incomeName">
+    </div>
+    <div class="form-group formBody">
+      <label>Amount</label> 
+      <input class="form-control" placeholder="Please enter the cost" type="text" [(ngModel)]="incomeCost" name="incomeCost">
+    </div>
+    <div class="form-group formBody">
+      <label>Category of Income</label> 
+      <input class="form-control" placeholder="Please enter the category of your income" type="text" [(ngModel)]="incomeCategory" name="incomeCategory">
+    </div>
+    <div class="form-group formBody">
+      <label>Date of Income (mm/dd/yyyy)</label> 
+      <input class="form-control"  placeholder="(07/20/2018)" type="text" [(ngModel)]="incomeDate" name="incomeDate">
+    </div>
+    <div class="formSubmit">
+      <button class="btn-success" type="submit" style="font-size:24px">Add Income <i class="fa fa-plus-circle"></i></button>    
+    </div>
+    <br>
+  </form>
+</div>
+
+
+<div class="formCSS">
+  <div class="formStyle">
+    <h2>Add Expense </h2> 
+  </div>
+  <form (submit) = "addExpense()">
+    <div class="form-group formBody">
+      <label>Name of Expense</label> 
+      <input class="form-control" placeholder="Please enter the name of the expense" type="text" [(ngModel)]="expenseName" name="expenseName">
+    </div>
+    <div class="form-group formBody">
+      <label>Amount</label> 
+      <input class="form-control" placeholder="Please enter the cost" type="text" [(ngModel)]="expenseCost" name="expenseCost">
+    </div>
+    <div class="form-group formBody">
+      <label>Category of Expense</label> 
+      <input class="form-control" placeholder="Please enter the category of your expense" type="text" [(ngModel)]="expenseCategory" name="expenseCategory">
+    </div>
+    <div class="form-group formBody">
+      <label>Date of Expense (mm/dd/yyyy)</label> 
+      <input class="form-control"  placeholder="(07/20/2018)" type="text" [(ngModel)]="expenseDate" name="expenseDate">
+    </div>
+    <div class="formSubmit">
+      <button class="btn-success" type="submit" style="font-size:24px">Add Expense <i class="fa fa-plus-circle"></i></button>    
+    </div>
+    <br>
+  </form>
+</div>

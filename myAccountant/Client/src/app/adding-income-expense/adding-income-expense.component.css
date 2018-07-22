@@ -1,0 +1,26 @@
+.formCSS{
+    
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        border-color: darkslategrey;
+        border-style: groove;
+        border-radius: 10px;
+        border-width: medium;
+        vertical-align: middle;
+    
+    }
+    .formStyle{
+        text-align: center;
+    }
+    
+    .formBody{
+        text-align: left;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .formSubmit{
+        text-align: center;
+    }

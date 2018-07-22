@@ -1,0 +1,37 @@
+.tableHead {
+    text-align: center;
+}
+
+.tableParent {
+    height: 100vh;
+}
+.tableExpense {
+    display: block;
+    height: 50%;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.tableIncome {
+    display: block;
+    height: 50%;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.view {
+    text-align: center;
+}
+
+.viewTable {
+    text-align: left;
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.buttons {
+    text-align: center;
+}

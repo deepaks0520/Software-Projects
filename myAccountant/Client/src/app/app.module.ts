@@ -17,6 +17,7 @@ import { HttpModule } from '@angular/http';
 import { ValidateService} from './services/validate.service';
 import {FlashMessagesModule} from 'angular2-flash-messages'; 
 import { AuthService} from './services/auth.service';
+import { AddingIncomeExpenseComponent } from './adding-income-expense/adding-income-expense.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,14 @@ import { AuthService} from './services/auth.service';
     YearlyChartComponent,
     TableComponent,
     SignInComponent,
-    LogInComponent
+    LogInComponent,
+    AddingIncomeExpenseComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    ReactiveFormsModule,
     FlashMessagesModule.forRoot(),
     HttpModule
   ],

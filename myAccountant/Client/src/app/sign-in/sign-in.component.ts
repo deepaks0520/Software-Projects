@@ -43,21 +43,19 @@ export class SignInComponent implements OnInit {
      this.authService.registerUser(user).subscribe(data => {
         if (data.success){
           this.flashMessagesService.show("You have successfully created an account!", {cssClass: 'alert-success', timeout: '1000'});    
-          console.log("redirecting")          
-          this.router.navigate(['afterSignInHome']);              
+          console.log("redirecting to user profile page")          
+          this.router.navigate(['/afterSignInHome', data.token]);              
         }
         else{
-          this.flashMessagesService.show("Username already exists", {cssClass: 'alert-danger', timeout: '1000'});    
-          console.log("redirecting")          
+          this.flashMessagesService.show("Username or email already exists", {cssClass: 'alert-danger', timeout: '1000'});    
         }
-     })
-
-     console.log( user);
-     
+     })     
   }
 
   back(){
+    console.log('redirecting to home page')
     this.router.navigate(['home']);
   }
+  
 
 }
