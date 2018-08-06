@@ -39,7 +39,7 @@ export const appRoutes: Routes= [
             {
                 path: 'addingIncomeExpense',
                 component: AddingIncomeExpenseComponent,
-            }
+            },
             
             {
                 path: 'table',
