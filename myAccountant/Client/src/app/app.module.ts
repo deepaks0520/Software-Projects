@@ -18,6 +18,7 @@ import { ValidateService} from './services/validate.service';
 import {FlashMessagesModule} from 'angular2-flash-messages'; 
 import { AuthService} from './services/auth.service';
 import { AddingIncomeExpenseComponent } from './adding-income-expense/adding-income-expense.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AddingIncomeExpenseComponent } from './adding-income-expense/adding-inc
     FormsModule,
     ReactiveFormsModule,
     FlashMessagesModule.forRoot(),
-    HttpModule
+    HttpModule,
+    Ng2GoogleChartsModule,
   ],
   providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]

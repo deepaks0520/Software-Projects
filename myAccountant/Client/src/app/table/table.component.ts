@@ -439,8 +439,8 @@ export class TableComponent implements OnInit {
       var newDateA = a.date.split("/")
       var newDateB = b.date.split("/")
 
-      var dateA = new Date(parseInt(newDateA[2]), parseInt(newDateA[0]) - 1, parseInt(newDateA[1])).toISOString(),
-      var dateB = new Date(parseInt(newDateB[2]), parseInt(newDateB[0]) - 1, parseInt(newDateB[1])).toISOString(),
+      var dateA = new Date(parseInt(newDateA[2]), parseInt(newDateA[0]) - 1, parseInt(newDateA[1])).toISOString()
+      var dateB = new Date(parseInt(newDateB[2]), parseInt(newDateB[0]) - 1, parseInt(newDateB[1])).toISOString()
       
       if (dateA < dateB) {return -1;}
       if (dateA > dateB) {return 1;}

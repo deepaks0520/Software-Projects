@@ -1,1 +1,43 @@
-Monthly Chart
+
+<div *ngIf="user.incomeShow">
+    <div class="bothChartsHeader">
+        <h1> My Income </h1>
+    </div>
+    <div class="dropdown view bothChartsDropDown">
+        <select [(ngModel)]="optIncomeMonth" (ngModelChange)="findingIncomeCategories()">
+            <option *ngFor="let opt of user.incomeMonths" [value]="opt">
+               {{opt}}
+            </option>
+        </select>
+       <select [(ngModel)]="optIncomeYear" (ngModelChange)="findingIncomeCategories()">
+            <option *ngFor="let opt of user.incomeYears" [value]="opt">
+                {{opt}}
+            </option>
+        </select>
+    </div>
+    <div class="bothCharts">
+        <google-chart [data]="incomeChartData"></google-chart>
+    </div>
+</div>
+
+
+<div *ngIf="user.expenseShow">
+    <div class="bothChartsHeader">
+        <h1> My Expenses </h1>
+    </div>
+    <div class="dropdown view bothChartsDropDown">
+        <select [(ngModel)]="optExpenseMonth" (ngModelChange)="findingExpenseCategories()">
+            <option *ngFor="let opt of user.expenseMonths" [value]="opt">
+               {{opt}}
+            </option>
+        </select>
+       <select [(ngModel)]="optExpenseYear" (ngModelChange)="findingExpenseCategories()">
+            <option *ngFor="let opt of user.expenseYears" [value]="opt">
+                {{opt}}
+            </option>
+        </select>
+    </div>
+    <div class="bothCharts">
+        <google-chart [data]="expenseChartData"></google-chart>
+    </div>
+</div>

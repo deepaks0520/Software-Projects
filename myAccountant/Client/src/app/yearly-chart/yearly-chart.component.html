@@ -1,1 +1,17 @@
-Yearly Chart
+<div *ngIf="user.show" class="chartBody">
+    <div class="bothChartsHeader">
+        <h1> Your {{optYear}} Summary</h1>
+    </div>
+    <div class="dropdown view bothChartsDropDown">
+       <select [(ngModel)]="optYear" (ngModelChange)="findingCostsPerMonth()">
+            <option *ngFor="let opt of user.totalYears" [value]="opt">
+                {{opt}}
+            </option>
+        </select>
+    </div>
+
+    <div class="bothCharts">    
+        <google-chart [data]="totalSummary"></google-chart>            
+    </div>
+    
+</div>
